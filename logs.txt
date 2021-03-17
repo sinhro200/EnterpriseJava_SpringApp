@@ -1,0 +1,248 @@
+2021-03-13 09:48:56.781  INFO 12636 --- [main] o.s.F.ConsoleSpringBootApplication       : Starting ConsoleSpringBootApplication using Java 14.0.2 on DESKTOP-OFE7U1M with PID 12636 (C:\Users\sinhr\Documents\6 semestr\Enterprise Java\SpringApp\ForeignLanguageCourses\target\classes started by sinhr in C:\Users\sinhr\Documents\6 semestr\Enterprise Java\SpringApp)
+2021-03-13 09:48:56.788  INFO 12636 --- [main] o.s.F.ConsoleSpringBootApplication       : No active profile set, falling back to default profiles: default
+2021-03-13 09:48:57.724  INFO 12636 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-03-13 09:48:57.740  INFO 12636 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-13 09:48:57.741  INFO 12636 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-03-13 09:48:57.811  INFO 12636 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-13 09:48:57.811  INFO 12636 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 960 ms
+2021-03-13 09:48:57.975  INFO 12636 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-13 09:48:58.103  WARN 12636 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2021-03-13 09:48:58.104  INFO 12636 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-13 09:48:58.106  INFO 12636 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-03-13 09:48:58.118  INFO 12636 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-03-13 09:48:58.130 ERROR 12636 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2021-03-13 09:49:43.573  INFO 8124 --- [main] o.s.F.ConsoleSpringBootApplication       : Starting ConsoleSpringBootApplication using Java 14.0.2 on DESKTOP-OFE7U1M with PID 8124 (C:\Users\sinhr\Documents\6 semestr\Enterprise Java\SpringApp\ForeignLanguageCourses\target\classes started by sinhr in C:\Users\sinhr\Documents\6 semestr\Enterprise Java\SpringApp)
+2021-03-13 09:49:43.578  INFO 8124 --- [main] o.s.F.ConsoleSpringBootApplication       : No active profile set, falling back to default profiles: default
+2021-03-13 09:49:44.776  INFO 8124 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-03-13 09:49:44.784  INFO 8124 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-13 09:49:44.784  INFO 8124 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-03-13 09:49:44.853  INFO 8124 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-13 09:49:44.854  INFO 8124 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1211 ms
+2021-03-13 09:49:45.046  INFO 8124 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-13 09:49:45.200  INFO 8124 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-03-13 09:49:45.212  INFO 8124 --- [main] o.s.F.ConsoleSpringBootApplication       : Started ConsoleSpringBootApplication in 2.12 seconds (JVM running for 2.831)
+2021-03-13 09:49:45.214  INFO 8124 --- [main] o.s.ForeignLanguageCourses.MainProcess   : 
+2021-03-13 09:49:45.214  INFO 8124 --- [main] o.s.ForeignLanguageCourses.MainProcess   : _____________________________
+2021-03-13 09:49:45.214  INFO 8124 --- [main] o.s.ForeignLanguageCourses.MainProcess   : Неделя номер 1
+2021-03-13 09:49:45.214  INFO 8124 --- [main] o.s.ForeignLanguageCourses.MainProcess   : -----------------------------
+2021-03-13 09:49:45.216  INFO 8124 --- [main] o.s.F.s.NewRequestsGeneratorService      : Пришло 30 заявок.
+2021-03-13 09:49:45.217  INFO 8124 --- [main] o.s.F.service.RequestsHandlerService     : --> Добавим слушателей из заявок в уже существующие группы
+2021-03-13 09:49:45.219  INFO 8124 --- [main] o.s.F.service.RequestsHandlerService     : --< Готово
+2021-03-13 09:49:45.219  INFO 8124 --- [main] o.s.F.service.RequestsHandlerService     : --> Обработаем заявки не подходящие для уже существующих групп
+2021-03-13 09:49:45.221  INFO 8124 --- [main] o.s.F.service.RequestsHandlerService     : --< Готово
+2021-03-13 09:49:45.221  INFO 8124 --- [main] o.s.F.s.statistic.StatisticService       : Выручка за следующие 2 недели обучения 0
+2021-03-13 09:49:45.221  INFO 8124 --- [main] o.s.ForeignLanguageCourses.MainProcess   : 
+2021-03-13 09:49:45.221  INFO 8124 --- [main] o.s.ForeignLanguageCourses.MainProcess   : _____________________________
+2021-03-13 09:49:45.221  INFO 8124 --- [main] o.s.ForeignLanguageCourses.MainProcess   : Неделя номер 2
+2021-03-13 09:49:45.221  INFO 8124 --- [main] o.s.ForeignLanguageCourses.MainProcess   : -----------------------------
+2021-03-13 09:49:45.222  INFO 8124 --- [main] o.s.F.s.NewRequestsGeneratorService      : Пришло 22 заявок.
+2021-03-13 09:49:45.222  INFO 8124 --- [main] o.s.F.service.RequestsHandlerService     : --> Добавим слушателей из заявок в уже существующие группы
+2021-03-13 09:49:45.222  INFO 8124 --- [main] o.s.F.service.RequestsHandlerService     : --< Готово
+2021-03-13 09:49:45.222  INFO 8124 --- [main] o.s.F.service.RequestsHandlerService     : --> Обработаем заявки не подходящие для уже существующих групп
+2021-03-13 09:49:45.223  INFO 8124 --- [main] o.s.F.service.RequestsHandlerService     : --< Готово
+2021-03-13 09:49:45.223  INFO 8124 --- [main] o.s.F.s.statistic.StatisticService       : Выручка за следующие 2 недели обучения 0
+2021-03-13 09:49:45.223  INFO 8124 --- [main] o.s.ForeignLanguageCourses.MainProcess   : 
+2021-03-13 09:49:45.223  INFO 8124 --- [main] o.s.ForeignLanguageCourses.MainProcess   : _____________________________
+2021-03-13 09:49:45.223  INFO 8124 --- [main] o.s.ForeignLanguageCourses.MainProcess   : Неделя номер 3
+2021-03-13 09:49:45.223  INFO 8124 --- [main] o.s.ForeignLanguageCourses.MainProcess   : -----------------------------
+2021-03-13 09:49:45.224  INFO 8124 --- [main] o.s.F.s.NewRequestsGeneratorService      : Пришло 16 заявок.
+2021-03-13 09:49:45.224  INFO 8124 --- [main] o.s.F.service.RequestsHandlerService     : --> Добавим слушателей из заявок в уже существующие группы
+2021-03-13 09:49:45.225  INFO 8124 --- [main] o.s.F.service.RequestsHandlerService     : --< Готово
+2021-03-13 09:49:45.225  INFO 8124 --- [main] o.s.F.service.RequestsHandlerService     : --> Обработаем заявки не подходящие для уже существующих групп
+2021-03-13 09:49:45.228  INFO 8124 --- [main] o.s.F.service.RequestsHandlerService     : Накопилось >= 5 одинаковых заявок[5]. Intensity=Интенсив, language=Французский, level=Начальный. Пробуем сформировать группу.
+2021-03-13 09:49:45.229  INFO 8124 --- [main] o.s.F.service.RequestsHandlerService     : Курса данного типа ещё нет
+2021-03-13 09:49:45.233  INFO 8124 --- [main] o.s.F.service.RequestsHandlerService     : Создали новый курс, Course{intensity=Интенсив, language=Французский, level=Начальный, durationWeeks=12, numberLessonsPerWeek=5}PS
+2021-03-13 09:49:45.234  INFO 8124 --- [main] o.s.F.service.RequestsHandlerService     : Новая группа сформирована, Group{course=Course{intensity=Интенсив, language=Французский, level=Начальный, durationWeeks=12, numberLessonsPerWeek=5}PS}PS
+2021-03-13 09:49:45.234  INFO 8124 --- [main] o.s.F.service.RequestsHandlerService     : Накопилось >= 5 одинаковых заявок[6]. Intensity=Обычное обучение, language=Английский, level=Начальный. Пробуем сформировать группу.
+2021-03-13 09:49:45.234  INFO 8124 --- [main] o.s.F.service.RequestsHandlerService     : Курса данного типа ещё нет
+2021-03-13 09:49:45.234  INFO 8124 --- [main] o.s.F.service.RequestsHandlerService     : Создали новый курс, Course{intensity=Обычное обучение, language=Английский, level=Начальный, durationWeeks=9, numberLessonsPerWeek=3}PS
+2021-03-13 09:49:45.235  INFO 8124 --- [main] o.s.F.service.RequestsHandlerService     : Новая группа сформирована, Group{course=Course{intensity=Обычное обучение, language=Английский, level=Начальный, durationWeeks=9, numberLessonsPerWeek=3}PS}PS
+2021-03-13 09:49:45.235  INFO 8124 --- [main] o.s.F.service.RequestsHandlerService     : Накопилось >= 5 одинаковых заявок[5]. Intensity=Интенсив, language=Немецкий, level=Начальный. Пробуем сформировать группу.
+2021-03-13 09:49:45.235  INFO 8124 --- [main] o.s.F.service.RequestsHandlerService     : Курса данного типа ещё нет
+2021-03-13 09:49:45.235  INFO 8124 --- [main] o.s.F.service.RequestsHandlerService     : Создали новый курс, Course{intensity=Интенсив, language=Немецкий, level=Начальный, durationWeeks=12, numberLessonsPerWeek=5}PS
+2021-03-13 09:49:45.235  INFO 8124 --- [main] o.s.F.service.RequestsHandlerService     : Новая группа сформирована, Group{course=Course{intensity=Интенсив, language=Немецкий, level=Начальный, durationWeeks=12, numberLessonsPerWeek=5}PS}PS
+2021-03-13 09:49:45.236  INFO 8124 --- [main] o.s.F.service.RequestsHandlerService     : Накопилось >= 5 одинаковых заявок[6]. Intensity=Интенсив, language=Английский, level=Начальный. Пробуем сформировать группу.
+2021-03-13 09:49:45.236  INFO 8124 --- [main] o.s.F.service.RequestsHandlerService     : Курса данного типа ещё нет
+2021-03-13 09:49:45.236  INFO 8124 --- [main] o.s.F.service.RequestsHandlerService     : Создали новый курс, Course{intensity=Интенсив, language=Английский, level=Начальный, durationWeeks=12, numberLessonsPerWeek=5}PS
+2021-03-13 09:49:45.237  INFO 8124 --- [main] o.s.F.service.RequestsHandlerService     : Новая группа сформирована, Group{course=Course{intensity=Интенсив, language=Английский, level=Начальный, durationWeeks=12, numberLessonsPerWeek=5}PS}PS
+2021-03-13 09:49:45.237  INFO 8124 --- [main] o.s.F.service.RequestsHandlerService     : Накопилось >= 5 одинаковых заявок[5]. Intensity=Интенсив, language=Французский, level=Продвинутый. Пробуем сформировать группу.
+2021-03-13 09:49:45.237  INFO 8124 --- [main] o.s.F.service.RequestsHandlerService     : Курса данного типа ещё нет
+2021-03-13 09:49:45.237  INFO 8124 --- [main] o.s.F.service.RequestsHandlerService     : Создали новый курс, Course{intensity=Интенсив, language=Французский, level=Продвинутый, durationWeeks=12, numberLessonsPerWeek=5}PS
+2021-03-13 09:49:45.238  INFO 8124 --- [main] o.s.F.service.RequestsHandlerService     : Новая группа сформирована, Group{course=Course{intensity=Интенсив, language=Французский, level=Продвинутый, durationWeeks=12, numberLessonsPerWeek=5}PS}PS
+2021-03-13 09:49:45.238  INFO 8124 --- [main] o.s.F.service.RequestsHandlerService     : --< Готово
+2021-03-13 09:49:45.238  INFO 8124 --- [main] o.s.F.s.statistic.StatisticService       : Выручка за следующие 2 недели обучения 4700
+2021-03-13 09:49:45.239  INFO 8124 --- [main] o.s.ForeignLanguageCourses.MainProcess   : 
+2021-03-13 09:49:45.239  INFO 8124 --- [main] o.s.ForeignLanguageCourses.MainProcess   : _____________________________
+2021-03-13 09:49:45.239  INFO 8124 --- [main] o.s.ForeignLanguageCourses.MainProcess   : Неделя номер 4
+2021-03-13 09:49:45.239  INFO 8124 --- [main] o.s.ForeignLanguageCourses.MainProcess   : -----------------------------
+2021-03-13 09:49:45.239  INFO 8124 --- [main] o.s.F.s.NewRequestsGeneratorService      : Пришло 11 заявок.
+2021-03-13 09:49:45.240  INFO 8124 --- [main] o.s.F.service.RequestsHandlerService     : --> Добавим слушателей из заявок в уже существующие группы
+2021-03-13 09:49:45.241  INFO 8124 --- [main] o.s.F.service.RequestsHandlerService     : --< Готово
+2021-03-13 09:49:45.241  INFO 8124 --- [main] o.s.F.service.RequestsHandlerService     : --> Обработаем заявки не подходящие для уже существующих групп
+2021-03-13 09:49:45.241  INFO 8124 --- [main] o.s.F.service.RequestsHandlerService     : Накопилось >= 5 одинаковых заявок[5]. Intensity=Поддерживающее обучение, language=Английский, level=Начальный. Пробуем сформировать группу.
+2021-03-13 09:49:45.241  INFO 8124 --- [main] o.s.F.service.RequestsHandlerService     : Курса данного типа ещё нет
+2021-03-13 09:49:45.241  INFO 8124 --- [main] o.s.F.service.RequestsHandlerService     : Создали новый курс, Course{intensity=Поддерживающее обучение, language=Английский, level=Начальный, durationWeeks=5, numberLessonsPerWeek=1}PS
+2021-03-13 09:49:45.241  INFO 8124 --- [main] o.s.F.service.RequestsHandlerService     : Новая группа сформирована, Group{course=Course{intensity=Поддерживающее обучение, language=Английский, level=Начальный, durationWeeks=5, numberLessonsPerWeek=1}PS}PS
+2021-03-13 09:49:45.242  INFO 8124 --- [main] o.s.F.service.RequestsHandlerService     : --< Готово
+2021-03-13 09:49:45.242  INFO 8124 --- [main] o.s.F.s.statistic.StatisticService       : Выручка за следующие 2 недели обучения 6200
+2021-03-13 09:49:45.242  INFO 8124 --- [main] o.s.ForeignLanguageCourses.MainProcess   : 
+2021-03-13 09:49:45.242  INFO 8124 --- [main] o.s.ForeignLanguageCourses.MainProcess   : _____________________________
+2021-03-13 09:49:45.242  INFO 8124 --- [main] o.s.ForeignLanguageCourses.MainProcess   : Неделя номер 5
+2021-03-13 09:49:45.242  INFO 8124 --- [main] o.s.ForeignLanguageCourses.MainProcess   : -----------------------------
+2021-03-13 09:49:45.243  INFO 8124 --- [main] o.s.F.s.NewRequestsGeneratorService      : Пришло 8 заявок.
+2021-03-13 09:49:45.243  INFO 8124 --- [main] o.s.F.service.RequestsHandlerService     : --> Добавим слушателей из заявок в уже существующие группы
+2021-03-13 09:49:45.243  INFO 8124 --- [main] o.s.F.service.RequestsHandlerService     : --< Готово
+2021-03-13 09:49:45.243  INFO 8124 --- [main] o.s.F.service.RequestsHandlerService     : --> Обработаем заявки не подходящие для уже существующих групп
+2021-03-13 09:49:45.244  INFO 8124 --- [main] o.s.F.service.RequestsHandlerService     : Накопилось >= 5 одинаковых заявок[5]. Intensity=Поддерживающее обучение, language=Французский, level=Средний. Пробуем сформировать группу.
+2021-03-13 09:49:45.244  INFO 8124 --- [main] o.s.F.service.RequestsHandlerService     : Курса данного типа ещё нет
+2021-03-13 09:49:45.244  INFO 8124 --- [main] o.s.F.service.RequestsHandlerService     : Создали новый курс, Course{intensity=Поддерживающее обучение, language=Французский, level=Средний, durationWeeks=5, numberLessonsPerWeek=1}PS
+2021-03-13 09:49:45.244  INFO 8124 --- [main] o.s.F.service.RequestsHandlerService     : Новая группа сформирована, Group{course=Course{intensity=Поддерживающее обучение, language=Французский, level=Средний, durationWeeks=5, numberLessonsPerWeek=1}PS}PS
+2021-03-13 09:49:45.245  INFO 8124 --- [main] o.s.F.service.RequestsHandlerService     : --< Готово
+2021-03-13 09:49:45.245  INFO 8124 --- [main] o.s.F.s.statistic.StatisticService       : Выручка за следующие 2 недели обучения 7300
+2021-03-13 09:49:45.245  INFO 8124 --- [main] o.s.ForeignLanguageCourses.MainProcess   : 
+2021-03-13 09:49:45.245  INFO 8124 --- [main] o.s.ForeignLanguageCourses.MainProcess   : _____________________________
+2021-03-13 09:49:45.245  INFO 8124 --- [main] o.s.ForeignLanguageCourses.MainProcess   : Неделя номер 6
+2021-03-13 09:49:45.245  INFO 8124 --- [main] o.s.ForeignLanguageCourses.MainProcess   : -----------------------------
+2021-03-13 09:49:45.245  INFO 8124 --- [main] o.s.F.s.NewRequestsGeneratorService      : Пришло 6 заявок.
+2021-03-13 09:49:45.247  INFO 8124 --- [main] o.s.F.service.RequestsHandlerService     : --> Добавим слушателей из заявок в уже существующие группы
+2021-03-13 09:49:45.248  INFO 8124 --- [main] o.s.F.service.RequestsHandlerService     : --< Готово
+2021-03-13 09:49:45.248  INFO 8124 --- [main] o.s.F.service.RequestsHandlerService     : --> Обработаем заявки не подходящие для уже существующих групп
+2021-03-13 09:49:45.248  INFO 8124 --- [main] o.s.F.service.RequestsHandlerService     : Накопилось >= 5 одинаковых заявок[5]. Intensity=Интенсив, language=Английский, level=Средний. Пробуем сформировать группу.
+2021-03-13 09:49:45.248  INFO 8124 --- [main] o.s.F.service.RequestsHandlerService     : Курса данного типа ещё нет
+2021-03-13 09:49:45.249  INFO 8124 --- [main] o.s.F.service.RequestsHandlerService     : Создали новый курс, Course{intensity=Интенсив, language=Английский, level=Средний, durationWeeks=12, numberLessonsPerWeek=5}PS
+2021-03-13 09:49:45.249  INFO 8124 --- [main] o.s.F.service.RequestsHandlerService     : Новая группа сформирована, Group{course=Course{intensity=Интенсив, language=Английский, level=Средний, durationWeeks=12, numberLessonsPerWeek=5}PS}PS
+2021-03-13 09:49:45.249  INFO 8124 --- [main] o.s.F.service.RequestsHandlerService     : --< Готово
+2021-03-13 09:49:45.249  INFO 8124 --- [main] o.s.F.s.statistic.StatisticService       : Выручка за следующие 2 недели обучения 8000
+2021-03-13 09:49:45.250  INFO 8124 --- [main] o.s.ForeignLanguageCourses.MainProcess   : Общая выручка : 26200
+2021-03-13 09:54:31.562  INFO 12044 --- [main] o.s.F.ConsoleSpringBootApplication       : Starting ConsoleSpringBootApplication using Java 14.0.2 on DESKTOP-OFE7U1M with PID 12044 (C:\Users\sinhr\Documents\6 semestr\Enterprise Java\SpringApp\ForeignLanguageCourses\target\classes started by sinhr in C:\Users\sinhr\Documents\6 semestr\Enterprise Java\SpringApp)
+2021-03-13 09:54:31.565  INFO 12044 --- [main] o.s.F.ConsoleSpringBootApplication       : No active profile set, falling back to default profiles: default
+2021-03-13 09:54:32.456  INFO 12044 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-03-13 09:54:32.463  INFO 12044 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-13 09:54:32.464  INFO 12044 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-03-13 09:54:32.537  INFO 12044 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-13 09:54:32.537  INFO 12044 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 926 ms
+2021-03-13 09:54:32.695  INFO 12044 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-13 09:54:32.832  INFO 12044 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-03-13 09:54:32.841  INFO 12044 --- [main] o.s.F.ConsoleSpringBootApplication       : Started ConsoleSpringBootApplication in 1.603 seconds (JVM running for 2.205)
+2021-03-13 09:54:32.842  INFO 12044 --- [main] o.s.ForeignLanguageCourses.MainProcess   : 
+2021-03-13 09:54:32.843  INFO 12044 --- [main] o.s.ForeignLanguageCourses.MainProcess   : _____________________________
+2021-03-13 09:54:32.843  INFO 12044 --- [main] o.s.ForeignLanguageCourses.MainProcess   : Неделя номер 1
+2021-03-13 09:54:32.843  INFO 12044 --- [main] o.s.ForeignLanguageCourses.MainProcess   : -----------------------------
+2021-03-13 09:54:32.844  INFO 12044 --- [main] o.s.F.s.NewRequestsGeneratorService      : Пришло 30 заявок.
+2021-03-13 09:54:32.845  INFO 12044 --- [main] o.s.F.service.RequestsHandlerService     : --> Добавим слушателей из заявок в уже существующие группы
+2021-03-13 09:54:32.846  INFO 12044 --- [main] o.s.F.service.RequestsHandlerService     : --< Готово. Добавлено 0 слушателей.
+2021-03-13 09:54:32.846  INFO 12044 --- [main] o.s.F.service.RequestsHandlerService     : --> Обработаем заявки не подходящие для уже существующих групп
+2021-03-13 09:54:32.847  INFO 12044 --- [main] o.s.F.service.RequestsHandlerService     : --< Готово
+2021-03-13 09:54:32.848  INFO 12044 --- [main] o.s.F.s.statistic.StatisticService       : Выручка за следующие 2 недели обучения 0
+2021-03-13 09:54:32.848  INFO 12044 --- [main] o.s.ForeignLanguageCourses.MainProcess   : 
+2021-03-13 09:54:32.848  INFO 12044 --- [main] o.s.ForeignLanguageCourses.MainProcess   : _____________________________
+2021-03-13 09:54:32.848  INFO 12044 --- [main] o.s.ForeignLanguageCourses.MainProcess   : Неделя номер 2
+2021-03-13 09:54:32.848  INFO 12044 --- [main] o.s.ForeignLanguageCourses.MainProcess   : -----------------------------
+2021-03-13 09:54:32.849  INFO 12044 --- [main] o.s.F.s.NewRequestsGeneratorService      : Пришло 22 заявок.
+2021-03-13 09:54:32.849  INFO 12044 --- [main] o.s.F.service.RequestsHandlerService     : --> Добавим слушателей из заявок в уже существующие группы
+2021-03-13 09:54:32.849  INFO 12044 --- [main] o.s.F.service.RequestsHandlerService     : --< Готово. Добавлено 0 слушателей.
+2021-03-13 09:54:32.849  INFO 12044 --- [main] o.s.F.service.RequestsHandlerService     : --> Обработаем заявки не подходящие для уже существующих групп
+2021-03-13 09:54:32.851  INFO 12044 --- [main] o.s.F.service.RequestsHandlerService     : Накопилось >= 5 одинаковых заявок[7]. Intensity=Обычное обучение, language=Английский, level=Начальный. Пробуем сформировать группу.
+2021-03-13 09:54:32.851  INFO 12044 --- [main] o.s.F.service.RequestsHandlerService     : Курса данного типа ещё нет
+2021-03-13 09:54:32.855  INFO 12044 --- [main] o.s.F.service.RequestsHandlerService     : Создали новый курс, Course{intensity=Обычное обучение, language=Английский, level=Начальный, durationWeeks=9, numberLessonsPerWeek=3}PS
+2021-03-13 09:54:32.856  INFO 12044 --- [main] o.s.F.service.RequestsHandlerService     : Новая группа сформирована, Group{course=Course{intensity=Обычное обучение, language=Английский, level=Начальный, durationWeeks=9, numberLessonsPerWeek=3}PS}PS
+2021-03-13 09:54:32.857  INFO 12044 --- [main] o.s.F.service.RequestsHandlerService     : Накопилось >= 5 одинаковых заявок[5]. Intensity=Интенсив, language=Французский, level=Начальный. Пробуем сформировать группу.
+2021-03-13 09:54:32.857  INFO 12044 --- [main] o.s.F.service.RequestsHandlerService     : Курса данного типа ещё нет
+2021-03-13 09:54:32.857  INFO 12044 --- [main] o.s.F.service.RequestsHandlerService     : Создали новый курс, Course{intensity=Интенсив, language=Французский, level=Начальный, durationWeeks=12, numberLessonsPerWeek=5}PS
+2021-03-13 09:54:32.857  INFO 12044 --- [main] o.s.F.service.RequestsHandlerService     : Новая группа сформирована, Group{course=Course{intensity=Интенсив, language=Французский, level=Начальный, durationWeeks=12, numberLessonsPerWeek=5}PS}PS
+2021-03-13 09:54:32.857  INFO 12044 --- [main] o.s.F.service.RequestsHandlerService     : Накопилось >= 5 одинаковых заявок[5]. Intensity=Интенсив, language=Английский, level=Средний. Пробуем сформировать группу.
+2021-03-13 09:54:32.857  INFO 12044 --- [main] o.s.F.service.RequestsHandlerService     : Курса данного типа ещё нет
+2021-03-13 09:54:32.859  INFO 12044 --- [main] o.s.F.service.RequestsHandlerService     : Создали новый курс, Course{intensity=Интенсив, language=Английский, level=Средний, durationWeeks=12, numberLessonsPerWeek=5}PS
+2021-03-13 09:54:32.860  INFO 12044 --- [main] o.s.F.service.RequestsHandlerService     : Новая группа сформирована, Group{course=Course{intensity=Интенсив, language=Английский, level=Средний, durationWeeks=12, numberLessonsPerWeek=5}PS}PS
+2021-03-13 09:54:32.860  INFO 12044 --- [main] o.s.F.service.RequestsHandlerService     : --< Готово
+2021-03-13 09:54:32.860  INFO 12044 --- [main] o.s.F.s.statistic.StatisticService       : Выручка за следующие 2 недели обучения 2200
+2021-03-13 09:54:32.860  INFO 12044 --- [main] o.s.ForeignLanguageCourses.MainProcess   : 
+2021-03-13 09:54:32.860  INFO 12044 --- [main] o.s.ForeignLanguageCourses.MainProcess   : _____________________________
+2021-03-13 09:54:32.860  INFO 12044 --- [main] o.s.ForeignLanguageCourses.MainProcess   : Неделя номер 3
+2021-03-13 09:54:32.860  INFO 12044 --- [main] o.s.ForeignLanguageCourses.MainProcess   : -----------------------------
+2021-03-13 09:54:32.861  INFO 12044 --- [main] o.s.F.s.NewRequestsGeneratorService      : Пришло 16 заявок.
+2021-03-13 09:54:32.861  INFO 12044 --- [main] o.s.F.service.RequestsHandlerService     : --> Добавим слушателей из заявок в уже существующие группы
+2021-03-13 09:54:32.862  INFO 12044 --- [main] o.s.F.service.RequestsHandlerService     : --< Готово. Добавлено 5 слушателей.
+2021-03-13 09:54:32.862  INFO 12044 --- [main] o.s.F.service.RequestsHandlerService     : --> Обработаем заявки не подходящие для уже существующих групп
+2021-03-13 09:54:32.863  INFO 12044 --- [main] o.s.F.service.RequestsHandlerService     : Накопилось >= 5 одинаковых заявок[5]. Intensity=Интенсив, language=Английский, level=Начальный. Пробуем сформировать группу.
+2021-03-13 09:54:32.863  INFO 12044 --- [main] o.s.F.service.RequestsHandlerService     : Курса данного типа ещё нет
+2021-03-13 09:54:32.863  INFO 12044 --- [main] o.s.F.service.RequestsHandlerService     : Создали новый курс, Course{intensity=Интенсив, language=Английский, level=Начальный, durationWeeks=12, numberLessonsPerWeek=5}PS
+2021-03-13 09:54:32.863  INFO 12044 --- [main] o.s.F.service.RequestsHandlerService     : Новая группа сформирована, Group{course=Course{intensity=Интенсив, language=Английский, level=Начальный, durationWeeks=12, numberLessonsPerWeek=5}PS}PS
+2021-03-13 09:54:32.864  INFO 12044 --- [main] o.s.F.service.RequestsHandlerService     : --< Готово
+2021-03-13 09:54:32.864  INFO 12044 --- [main] o.s.F.s.statistic.StatisticService       : Выручка за следующие 2 недели обучения 3300
+2021-03-13 09:54:32.864  INFO 12044 --- [main] o.s.ForeignLanguageCourses.MainProcess   : 
+2021-03-13 09:54:32.864  INFO 12044 --- [main] o.s.ForeignLanguageCourses.MainProcess   : _____________________________
+2021-03-13 09:54:32.864  INFO 12044 --- [main] o.s.ForeignLanguageCourses.MainProcess   : Неделя номер 4
+2021-03-13 09:54:32.864  INFO 12044 --- [main] o.s.ForeignLanguageCourses.MainProcess   : -----------------------------
+2021-03-13 09:54:32.865  INFO 12044 --- [main] o.s.F.s.NewRequestsGeneratorService      : Пришло 11 заявок.
+2021-03-13 09:54:32.865  INFO 12044 --- [main] o.s.F.service.RequestsHandlerService     : --> Добавим слушателей из заявок в уже существующие группы
+2021-03-13 09:54:32.866  INFO 12044 --- [main] o.s.F.service.RequestsHandlerService     : --< Готово. Добавлено 4 слушателей.
+2021-03-13 09:54:32.866  INFO 12044 --- [main] o.s.F.service.RequestsHandlerService     : --> Обработаем заявки не подходящие для уже существующих групп
+2021-03-13 09:54:32.866  INFO 12044 --- [main] o.s.F.service.RequestsHandlerService     : Накопилось >= 5 одинаковых заявок[5]. Intensity=Обычное обучение, language=Французский, level=Средний. Пробуем сформировать группу.
+2021-03-13 09:54:32.866  INFO 12044 --- [main] o.s.F.service.RequestsHandlerService     : Курса данного типа ещё нет
+2021-03-13 09:54:32.867  INFO 12044 --- [main] o.s.F.service.RequestsHandlerService     : Создали новый курс, Course{intensity=Обычное обучение, language=Французский, level=Средний, durationWeeks=9, numberLessonsPerWeek=3}PS
+2021-03-13 09:54:32.867  INFO 12044 --- [main] o.s.F.service.RequestsHandlerService     : Новая группа сформирована, Group{course=Course{intensity=Обычное обучение, language=Французский, level=Средний, durationWeeks=9, numberLessonsPerWeek=3}PS}PS
+2021-03-13 09:54:32.867  INFO 12044 --- [main] o.s.F.service.RequestsHandlerService     : --< Готово
+2021-03-13 09:54:32.867  INFO 12044 --- [main] o.s.F.s.statistic.StatisticService       : Выручка за следующие 2 недели обучения 4800
+2021-03-13 09:54:32.867  INFO 12044 --- [main] o.s.ForeignLanguageCourses.MainProcess   : 
+2021-03-13 09:54:32.867  INFO 12044 --- [main] o.s.ForeignLanguageCourses.MainProcess   : _____________________________
+2021-03-13 09:54:32.867  INFO 12044 --- [main] o.s.ForeignLanguageCourses.MainProcess   : Неделя номер 5
+2021-03-13 09:54:32.867  INFO 12044 --- [main] o.s.ForeignLanguageCourses.MainProcess   : -----------------------------
+2021-03-13 09:54:32.867  INFO 12044 --- [main] o.s.F.s.NewRequestsGeneratorService      : Пришло 8 заявок.
+2021-03-13 09:54:32.868  INFO 12044 --- [main] o.s.F.service.RequestsHandlerService     : --> Добавим слушателей из заявок в уже существующие группы
+2021-03-13 09:54:32.868  INFO 12044 --- [main] o.s.F.service.RequestsHandlerService     : --< Готово. Добавлено 2 слушателей.
+2021-03-13 09:54:32.868  INFO 12044 --- [main] o.s.F.service.RequestsHandlerService     : --> Обработаем заявки не подходящие для уже существующих групп
+2021-03-13 09:54:32.868  INFO 12044 --- [main] o.s.F.service.RequestsHandlerService     : --< Готово
+2021-03-13 09:54:32.868  INFO 12044 --- [main] o.s.F.s.statistic.StatisticService       : Выручка за следующие 2 недели обучения 5000
+2021-03-13 09:54:32.868  INFO 12044 --- [main] o.s.ForeignLanguageCourses.MainProcess   : 
+2021-03-13 09:54:32.868  INFO 12044 --- [main] o.s.ForeignLanguageCourses.MainProcess   : _____________________________
+2021-03-13 09:54:32.868  INFO 12044 --- [main] o.s.ForeignLanguageCourses.MainProcess   : Неделя номер 6
+2021-03-13 09:54:32.868  INFO 12044 --- [main] o.s.ForeignLanguageCourses.MainProcess   : -----------------------------
+2021-03-13 09:54:32.869  INFO 12044 --- [main] o.s.F.s.NewRequestsGeneratorService      : Пришло 6 заявок.
+2021-03-13 09:54:32.869  INFO 12044 --- [main] o.s.F.service.RequestsHandlerService     : --> Добавим слушателей из заявок в уже существующие группы
+2021-03-13 09:54:32.869  INFO 12044 --- [main] o.s.F.service.RequestsHandlerService     : --< Готово. Добавлено 2 слушателей.
+2021-03-13 09:54:32.869  INFO 12044 --- [main] o.s.F.service.RequestsHandlerService     : --> Обработаем заявки не подходящие для уже существующих групп
+2021-03-13 09:54:32.869  INFO 12044 --- [main] o.s.F.service.RequestsHandlerService     : Накопилось >= 5 одинаковых заявок[5]. Intensity=Интенсив, language=Немецкий, level=Начальный. Пробуем сформировать группу.
+2021-03-13 09:54:32.869  INFO 12044 --- [main] o.s.F.service.RequestsHandlerService     : Курса данного типа ещё нет
+2021-03-13 09:54:32.869  INFO 12044 --- [main] o.s.F.service.RequestsHandlerService     : Создали новый курс, Course{intensity=Интенсив, language=Немецкий, level=Начальный, durationWeeks=12, numberLessonsPerWeek=5}PS
+2021-03-13 09:54:32.869  INFO 12044 --- [main] o.s.F.service.RequestsHandlerService     : Новая группа сформирована, Group{course=Course{intensity=Интенсив, language=Немецкий, level=Начальный, durationWeeks=12, numberLessonsPerWeek=5}PS}PS
+2021-03-13 09:54:32.870  INFO 12044 --- [main] o.s.F.service.RequestsHandlerService     : --< Готово
+2021-03-13 09:54:32.870  INFO 12044 --- [main] o.s.F.s.statistic.StatisticService       : Выручка за следующие 2 недели обучения 6700
+2021-03-13 09:54:32.870  INFO 12044 --- [main] o.s.ForeignLanguageCourses.MainProcess   : Общая выручка : 22000
+2021-03-13 10:07:48.750  INFO 8056 --- [main] o.s.F.ConsoleSpringBootApplication       : Starting ConsoleSpringBootApplication using Java 14.0.2 on DESKTOP-OFE7U1M with PID 8056 (C:\Users\sinhr\Documents\6 semestr\Enterprise Java\SpringApp\ForeignLanguageCourses\target\classes started by sinhr in C:\Users\sinhr\Documents\6 semestr\Enterprise Java\SpringApp)
+2021-03-13 10:07:48.754  INFO 8056 --- [main] o.s.F.ConsoleSpringBootApplication       : No active profile set, falling back to default profiles: default
+2021-03-13 10:07:49.339  WARN 8056 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.context.ApplicationContextException: Unable to start ServletWebServerApplicationContext due to missing ServletWebServerFactory bean.
+2021-03-13 10:07:49.404 ERROR 8056 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.context.ApplicationContextException: Unable to start ServletWebServerApplicationContext due to missing ServletWebServerFactory bean.
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:162) ~[spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:582) ~[spring-context-5.3.3.jar:5.3.3]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144) ~[spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:767) ~[spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759) ~[spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426) ~[spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326) ~[spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1311) ~[spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300) ~[spring-boot-2.4.2.jar:2.4.2]
+	at org.sinhro.ForeignLanguageCourses.ConsoleSpringBootApplication.main(ConsoleSpringBootApplication.java:26) ~[classes/:na]
+Caused by: org.springframework.context.ApplicationContextException: Unable to start ServletWebServerApplicationContext due to missing ServletWebServerFactory bean.
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getWebServerFactory(ServletWebServerApplicationContext.java:209) ~[spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:179) ~[spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:159) ~[spring-boot-2.4.2.jar:2.4.2]
+	... 9 common frames omitted
+
