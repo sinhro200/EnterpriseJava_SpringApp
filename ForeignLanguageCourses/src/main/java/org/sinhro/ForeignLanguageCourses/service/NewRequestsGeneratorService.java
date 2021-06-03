@@ -1,30 +1,28 @@
 package org.sinhro.ForeignLanguageCourses.service;
 
 import org.sinhro.ForeignLanguageCourses.domain.Request;
-import org.sinhro.ForeignLanguageCourses.repository.IRequestRepository;
-import org.sinhro.ForeignLanguageCourses.service.request_generator.IRequestGenerator;
+import org.sinhro.ForeignLanguageCourses.repository.RequestRepository;
+import org.sinhro.ForeignLanguageCourses.service.requestGenerator.IRequestGenerator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
-import java.util.Random;
 
 @Component
 public class NewRequestsGeneratorService {
 
     private final Logger log = LoggerFactory.getLogger(NewRequestsGeneratorService.class);
 
-    private final IRequestRepository requestRepository;
+    private final RequestRepository requestRepository;
     @Autowired
-    @Qualifier("usingOrderRequestGeneratorDynamic")
+    @Qualifier("withPreferValuesRequestGenerator")
     private IRequestGenerator requestGenerator;
 
     public NewRequestsGeneratorService(
-        IRequestRepository requestRepository,
+        RequestRepository requestRepository,
         IRequestGenerator requestGenerator) {
         this.requestRepository = requestRepository;
     }
@@ -34,7 +32,7 @@ public class NewRequestsGeneratorService {
         log.info("Пришло " + requests.size() + " заявок.");
         for (Request request : requests) {
             log.debug("      Новая заявка " + request.prettyString());
-            requestRepository.add(request);
+            requestRepository.save(request);
         }
     }
 }

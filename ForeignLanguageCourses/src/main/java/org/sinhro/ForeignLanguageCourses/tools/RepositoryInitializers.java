@@ -9,28 +9,28 @@ import java.util.List;
 
 public class RepositoryInitializers {
 
-    public static List<Language> languages(Object repo) {
+    public static List<Language> initialLanguages() {
         return Arrays.asList(
-            new Language(Counter.valueThenInc(repo), "Английский"),
-            new Language(Counter.valueThenInc(repo), "Французский"),
-            new Language(Counter.valueThenInc(repo), "Немецкий"),
-            new Language(Counter.valueThenInc(repo), "Японский")
+            new Language("Английский"),
+            new Language( "Французский"),
+            new Language( "Немецкий"),
+            new Language( "Японский")
         );
     }
 
-    public static List<Intensity> intensities(Object repo) {
+    public static List<Intensity> initialIntensities() {
         return Arrays.asList(
-            new Intensity(Counter.valueThenInc(repo), "Интенсив",3),
-            new Intensity(Counter.valueThenInc(repo), "Обычное обучение",2),
-            new Intensity(Counter.valueThenInc(repo), "Поддерживающее обучение",1)
+            new Intensity( "Интенсив",3),
+            new Intensity( "Обычное обучение",2),
+            new Intensity( "Поддерживающее обучение",1)
         );
     }
 
-    public static List<Level> levels(Object repo) {
+    public static List<Level> initialLevels() {
         return Arrays.asList(
-            new Level(Counter.valueThenInc(repo), "Начальный"),
-            new Level(Counter.valueThenInc(repo), "Средний"),
-            new Level(Counter.valueThenInc(repo), "Продвинутый")
+            new Level("Начальный"),
+            new Level("Средний"),
+            new Level("Продвинутый")
         );
     }
 }

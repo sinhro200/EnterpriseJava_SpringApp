@@ -6,6 +6,13 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import java.util.List;
 
 @NoArgsConstructor
@@ -13,12 +20,21 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
+@Entity
 public class Course {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @ManyToOne
     private Intensity intensity;
+    @ManyToOne
     private Language language;
+    @ManyToOne
     private Level level;
+
+    @OneToMany(mappedBy = "course")
+    private List<Group> group;
 
     private Integer durationWeeks;
     private Integer numberLessonsPerWeek;
