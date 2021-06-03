@@ -1,9 +1,9 @@
 package org.sinhro.ForeignLanguageCourses.service;
 
-import org.sinhro.ForeignLanguageCourses.repository.CourseRepository;
 import org.sinhro.ForeignLanguageCourses.repository.IntensityRepository;
 import org.sinhro.ForeignLanguageCourses.repository.LanguageRepository;
 import org.sinhro.ForeignLanguageCourses.repository.LevelRepository;
+import org.sinhro.ForeignLanguageCourses.repository.StatisticRepository;
 import org.sinhro.ForeignLanguageCourses.tools.RepositoryInitializers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -19,6 +19,9 @@ public class RepositoryInitializerService {
 
     @Autowired
     LevelRepository levelRepository;
+
+    @Autowired
+    StatisticRepository statisticRepository;
 
     public void initIfNeeded(){
         if (intensityRepository.findAll().isEmpty())

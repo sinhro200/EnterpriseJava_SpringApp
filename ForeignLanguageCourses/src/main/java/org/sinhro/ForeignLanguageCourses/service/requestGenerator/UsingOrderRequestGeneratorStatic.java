@@ -17,7 +17,6 @@ import java.util.List;
 import java.util.Random;
 
 @Component
-@Primary
 public class UsingOrderRequestGeneratorStatic implements IRequestGenerator {
 
     @Autowired

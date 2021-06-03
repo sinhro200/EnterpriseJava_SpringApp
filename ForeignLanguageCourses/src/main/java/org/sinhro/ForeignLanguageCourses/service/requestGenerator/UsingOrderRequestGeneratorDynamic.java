@@ -5,7 +5,7 @@ import org.sinhro.ForeignLanguageCourses.repository.IntensityRepository;
 import org.sinhro.ForeignLanguageCourses.repository.LanguageRepository;
 import org.sinhro.ForeignLanguageCourses.repository.LevelRepository;
 import org.sinhro.ForeignLanguageCourses.service.nameGenerator.INameGenerator;
-import org.sinhro.ForeignLanguageCourses.service.statistic.StatisticService;
+import org.sinhro.ForeignLanguageCourses.service.StatisticService;
 import org.sinhro.ForeignLanguageCourses.tools.random.IListElement;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -60,7 +60,7 @@ public class UsingOrderRequestGeneratorDynamic implements IRequestGenerator {
     }
 
     private Integer generateCountRequests() {
-        Integer currentWeek = statisticService.statistic.getWeek();
+        Integer currentWeek = statisticService.getCurrentWeek();
         Integer maxWeek = simulationTimeInTwoWeeks;
         double topBorder = Math.pow(maxWeek, 2);
         double curVal = Math.pow(maxWeek - currentWeek + 1, 2);

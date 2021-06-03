@@ -9,23 +9,34 @@ import org.sinhro.ForeignLanguageCourses.repository.LanguageRepository;
 import org.sinhro.ForeignLanguageCourses.repository.LevelRepository;
 import org.sinhro.ForeignLanguageCourses.service.RepositoryInitializerService;
 import org.sinhro.ForeignLanguageCourses.service.nameGenerator.INameGenerator;
-import org.sinhro.ForeignLanguageCourses.service.statistic.StatisticService;
+import org.sinhro.ForeignLanguageCourses.service.StatisticService;
 import org.sinhro.ForeignLanguageCourses.tools.random.IListElement;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
+
+/*
+Есть значения которые он генерирует чаще всего.
+Что он будет генерировать чаще всего определяется при запуске программы
+ */
 @Component
-public class UsingNamesRequestGenerator implements IRequestGenerator {
+@Primary
+public class WithPreferValuesRequestGenerator implements IRequestGenerator {
 
     private Logger log = LoggerFactory.getLogger(UsingOrderRequestGeneratorDynamic.class);
+
+    @Autowired
+    private Random random;
 
     @Autowired
     private IntensityRepository intensityRepository;
@@ -63,7 +74,7 @@ public class UsingNamesRequestGenerator implements IRequestGenerator {
     private List<Level> levelsWithRandomCountOfElements;
 
     @PostConstruct
-    private void init(){
+    private void init() {
         repositoryInitializerService.initIfNeeded();
         intensitiesWithRandomCountOfElements = elementListWithRandomCountElements(
             intensityRepository.findAll()
@@ -86,10 +97,18 @@ public class UsingNamesRequestGenerator implements IRequestGenerator {
     }
 
     private Integer generateCountRequests() {
-        Integer currentWeek = statisticService.statistic.getWeek();
-        Integer maxWeek = simulationTimeInTwoWeeks;
-        double topBorder = Math.pow(maxWeek, 2);
-        double curVal = Math.pow(maxWeek - currentWeek + 1, 2);
+        Integer currentWeek = statisticService.getCurrentWeek();
+        Integer oneSimulationTime = simulationTimeInTwoWeeks;
+        if (currentWeek >= oneSimulationTime) {
+
+            double interval = (maxNewRequestCount - minNewRequestCount) * random.nextDouble() + 0.4;
+            if (interval > 0.9)
+                interval = 0.9;
+            long result = Math.round(interval) + minNewRequestCount;
+            return ((int) result);
+        }
+        double topBorder = Math.pow(oneSimulationTime, 2);
+        double curVal = Math.pow(oneSimulationTime - currentWeek + 1, 2);
         double factor = curVal / topBorder;
         double interval = (maxNewRequestCount - minNewRequestCount) * factor;
         long result = Math.round(interval) + minNewRequestCount;
@@ -112,20 +131,21 @@ public class UsingNamesRequestGenerator implements IRequestGenerator {
             randomListElement.get(levelsWithRandomCountOfElements)
         );
     }
+
     /*
     Возвращает список с убывающим количеством от размера полученног осписка до 0
     случайных элементов
     Например:
     [1,2,3] -> [2,2,2,1,1,3]
      */
-    private <T> List<T> elementListWithRandomCountElements(List<T> elements){
+    private <T> List<T> elementListWithRandomCountElements(List<T> elements) {
         List<T> res = new ArrayList<T>();
         List<T> elems = elements;
         int cnt = elems.size();
-        while(!elems.isEmpty()){
+        while (!elems.isEmpty()) {
             T randomElement = randomListElement.get(elems);
             elems.remove(randomElement);
-            for(int i = 0; i < cnt; i ++){
+            for (int i = 0; i < cnt; i++) {
                 res.add(randomElement);
             }
             cnt--;

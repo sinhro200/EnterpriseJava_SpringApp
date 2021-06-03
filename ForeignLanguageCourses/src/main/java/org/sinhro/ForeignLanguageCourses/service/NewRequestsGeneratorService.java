@@ -18,7 +18,7 @@ public class NewRequestsGeneratorService {
 
     private final RequestRepository requestRepository;
     @Autowired
-    @Qualifier("usingNamesRequestGenerator")
+    @Qualifier("withPreferValuesRequestGenerator")
     private IRequestGenerator requestGenerator;
 
     public NewRequestsGeneratorService(

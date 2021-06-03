@@ -1,6 +1,5 @@
 package org.sinhro.ForeignLanguageCourses;
 
-import org.sinhro.ForeignLanguageCourses.domain.Group;
 import org.sinhro.ForeignLanguageCourses.repository.GroupRepository;
 import org.sinhro.ForeignLanguageCourses.service.RepositoryInitializerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,9 +7,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import javax.annotation.PostConstruct;
 
@@ -52,7 +49,7 @@ public class SpringApplication implements CommandLineRunner {
     public void run(String... args) {
 
         for (int i = 0; i < numberTwoWeeksInSimulation; i++)
-            mainProcess.twoWeekTick();
+            mainProcess.weekTick();
 
         mainProcess.end();
 

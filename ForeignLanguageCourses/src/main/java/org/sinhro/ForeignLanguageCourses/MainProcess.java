@@ -2,9 +2,10 @@ package org.sinhro.ForeignLanguageCourses;
 
 import org.sinhro.ForeignLanguageCourses.domain.Request;
 import org.sinhro.ForeignLanguageCourses.repository.RequestRepository;
+import org.sinhro.ForeignLanguageCourses.service.ListenerService;
 import org.sinhro.ForeignLanguageCourses.service.NewRequestsGeneratorService;
 import org.sinhro.ForeignLanguageCourses.service.RequestsHandlerService;
-import org.sinhro.ForeignLanguageCourses.service.statistic.StatisticService;
+import org.sinhro.ForeignLanguageCourses.service.StatisticService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,16 +25,19 @@ public class MainProcess {
     private RequestRepository requestRepository;
 
     @Autowired
+    private ListenerService listenerService;
+
+    @Autowired
     private NewRequestsGeneratorService newRequestsGeneratorService;
 
     @Autowired
     private RequestsHandlerService requestsHandlerService;
 
-    public void twoWeekTick() {
-        statisticService.statistic.nextWeek();
+    public void weekTick() {
+        statisticService.startNewWeek();
         log.info("");
         log.info("_____________________________");
-        log.info("Неделя номер " + statisticService.statistic.getWeek());
+        log.info("Неделя номер " + statisticService.getCurrentWeek());
         log.info("-----------------------------");
 
         //новые заявки
@@ -48,12 +52,16 @@ public class MainProcess {
             requestRepository.delete(hReq);
         }
 
-        //Оплата следующих 2 недель обучения
-        statisticService.calculateIncomeFromListenersForNextTwoWeeks();
+        //удаляем уже отучившихся слушателей
+        listenerService.removeFinishedListeners();
+
+        //Просчёт оплаты следующего периода обучения
+        statisticService.endWeek();
     }
 
     public void end() {
-        log.info("Общая выручка : " + statisticService.statistic.getGlobalProfit());
+
+//        log.info("Общая выручка : " + );
     }
 
 
@@ -61,33 +69,12 @@ public class MainProcess {
      *      ###     Общий алгоритм на тик      ###
      *
      *
-    !* Убрать слушателей, которые закончили курс
+     *
      * Сгенерировать новые заявки
      * Обработать ВСЕ заявки (в т.ч. с прошлого тика)
      *      Распределим слушателей из заявок в старые группы/создав новые группы(курсы)
-    !*      Предложить слушателям из частных групп перейти в общие группы (с шансом 70% они соглашаются)
-    !* Предложить оставшимся необработанным заявкам частные занятия
-    !*     С шансом 5 % они соглашаются
-    !*     Остальных сохраним в репозитории как заявки и на следующий тик обработаем
-     * Собрать выручку за следующие 2 недели со всех слушателей
-     *
-     *
-     */
-
-    /**
-     * Вопросы:
-     *      1: Приватность занятий как добавить?
-     *          - добавив группе поле isPrivate, так как структуры занятия нету (и нету смысла добавлять),
-     *              в такой группе будет 1 слушатель(поле isPrivate можно даже сделать вычисляемым)
-     *
-     *      2: Расписание+Занятия+посещаемость увеличат количество Data классов с 7 до 10,
-     *          + усложнят задачу в разы, следует опустить или сделать?
-     *
-     *      3: {Интенсивность}, {Язык}, {Уровень курсов} на данный момент сделаны как записи в репозитории,
-     *         Если необходимо сделать сортировку/взять конкретный курс по конкретной {интенсивности},
-     *              В данный момент надо искать в БД по названию
-     *          Но в теории можно сделать Enum, а надо?
-     *
+     * Собрать выручку за следующий период со всех слушателей
+     * Убрать слушателей, которые закончили курс
      *
      */
 }

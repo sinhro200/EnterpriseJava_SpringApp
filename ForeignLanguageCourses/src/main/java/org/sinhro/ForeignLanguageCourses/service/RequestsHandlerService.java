@@ -4,7 +4,6 @@ import org.sinhro.ForeignLanguageCourses.domain.Course;
 import org.sinhro.ForeignLanguageCourses.domain.Group;
 import org.sinhro.ForeignLanguageCourses.domain.Listener;
 import org.sinhro.ForeignLanguageCourses.domain.Request;
-import org.sinhro.ForeignLanguageCourses.service.statistic.StatisticService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
