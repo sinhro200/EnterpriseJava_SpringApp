@@ -18,7 +18,7 @@ public class NewRequestsGeneratorService {
 
     private final RequestRepository requestRepository;
     @Autowired
-    @Qualifier("usingOrderRequestGeneratorDynamic")
+    @Qualifier("usingNamesRequestGenerator")
     private IRequestGenerator requestGenerator;
 
     public NewRequestsGeneratorService(

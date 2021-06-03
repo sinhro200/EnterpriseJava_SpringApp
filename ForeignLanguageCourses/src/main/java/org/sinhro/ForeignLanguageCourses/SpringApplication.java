@@ -9,7 +9,10 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import javax.annotation.PostConstruct;
 
 @EntityScan("org/sinhro/ForeignLanguageCourses/domain/")
 @SpringBootApplication
@@ -26,23 +29,28 @@ public class SpringApplication implements CommandLineRunner {
     @Autowired
     private GroupRepository gr;
 
+    @PostConstruct
+    void init() {
+        repositoryInitializerService.initIfNeeded();
+    }
+
     public SpringApplication(MainProcess mainProcess) {
         this.mainProcess = mainProcess;
     }
 
     public static void main(String[] args) {
-        //        SpringApplication.run(ConsoleSpringBootApplication.class, args);
+        ConfigurableApplicationContext cac = org.springframework.boot.SpringApplication.run(SpringApplication.class, args);
+        cac.getBean(SpringApplication.class).run(args);
 
-        ApplicationContext context =
-            new AnnotationConfigApplicationContext(SpringApplication.class);
+//        ApplicationContext context =
+//            new AnnotationConfigApplicationContext(SpringApplication.class);
 
-        context.getBean(SpringApplication.class).run(args);
+//        context.getBean(SpringApplication.class).run(args);
     }
 
     @Override
-    public void run(String... args)  {
-        repositoryInitializerService.initIfNeeded();
-        gr.save(new Group());
+    public void run(String... args) {
+
         for (int i = 0; i < numberTwoWeeksInSimulation; i++)
             mainProcess.twoWeekTick();
 
