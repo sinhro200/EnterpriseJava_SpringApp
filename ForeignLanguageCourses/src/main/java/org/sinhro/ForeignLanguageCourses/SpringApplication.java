@@ -1,31 +1,32 @@
 package org.sinhro.ForeignLanguageCourses;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.sinhro.ForeignLanguageCourses.domain.Group;
+import org.sinhro.ForeignLanguageCourses.repository.GroupRepository;
+import org.sinhro.ForeignLanguageCourses.service.RepositoryInitializerService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
 
-//Spring boot console app
-
-@Configuration
-@ComponentScan(
-//    basePackages = "org.sinhro.ForeignLanguageCourses"
-    basePackageClasses = {ConsoleSpringBootApplication.class}
-)
-public class ConsoleSpringBootApplication implements CommandLineRunner {
+@EntityScan("org/sinhro/ForeignLanguageCourses/domain/")
+@SpringBootApplication
+public class SpringApplication implements CommandLineRunner {
 
     private final MainProcess mainProcess;
-
-    private static Logger logger = LoggerFactory.getLogger(ConsoleSpringBootApplication.class);
 
     @Value("${simulationTimeInTwoWeeks}")
     private int numberTwoWeeksInSimulation;
 
-    public ConsoleSpringBootApplication(MainProcess mainProcess) {
+    @Autowired
+    private RepositoryInitializerService repositoryInitializerService;
+
+    @Autowired
+    private GroupRepository gr;
+
+    public SpringApplication(MainProcess mainProcess) {
         this.mainProcess = mainProcess;
     }
 
@@ -33,13 +34,15 @@ public class ConsoleSpringBootApplication implements CommandLineRunner {
         //        SpringApplication.run(ConsoleSpringBootApplication.class, args);
 
         ApplicationContext context =
-            new AnnotationConfigApplicationContext(ConsoleSpringBootApplication.class);
+            new AnnotationConfigApplicationContext(SpringApplication.class);
 
-        context.getBean(ConsoleSpringBootApplication.class).run(args);
+        context.getBean(SpringApplication.class).run(args);
     }
 
     @Override
     public void run(String... args)  {
+        repositoryInitializerService.initIfNeeded();
+        gr.save(new Group());
         for (int i = 0; i < numberTwoWeeksInSimulation; i++)
             mainProcess.twoWeekTick();
 

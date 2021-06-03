@@ -2,8 +2,8 @@ package org.sinhro.ForeignLanguageCourses.service.statistic;
 
 import org.sinhro.ForeignLanguageCourses.domain.Language;
 import org.sinhro.ForeignLanguageCourses.domain.Listener;
-import org.sinhro.ForeignLanguageCourses.repository.IListenerRepository;
-import org.sinhro.ForeignLanguageCourses.service.income_calculator.IIncomeCalculator;
+import org.sinhro.ForeignLanguageCourses.repository.ListenerRepository;
+import org.sinhro.ForeignLanguageCourses.service.incomeCalculator.IIncomeCalculator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +20,7 @@ public class StatisticService {
     private IIncomeCalculator incomeCalculator;
 
     @Autowired
-    private IListenerRepository listenerRepository;
+    private ListenerRepository listenerRepository;
 
     public Statistic statistic = new Statistic();
     public Set<Integer> oldListenersIds = new TreeSet<>();
@@ -33,7 +33,7 @@ public class StatisticService {
 
     public void calculateIncomeFromListenersForNextTwoWeeks() {
         Integer globalTwoWeeksIncome = 0;
-        for (Listener listener : listenerRepository.listeners()) {
+        for (Listener listener : listenerRepository.findAll()) {
             Language language = listener.getGroup().getCourse().getLanguage();
             globalTwoWeeksIncome += incomeCalculator.calculate(language, false);
         }

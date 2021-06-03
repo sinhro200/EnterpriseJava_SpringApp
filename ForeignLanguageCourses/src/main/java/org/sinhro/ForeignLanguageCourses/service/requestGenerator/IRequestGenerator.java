@@ -1,4 +1,4 @@
-package org.sinhro.ForeignLanguageCourses.service.request_generator;
+package org.sinhro.ForeignLanguageCourses.service.requestGenerator;
 
 import org.sinhro.ForeignLanguageCourses.domain.Request;
 

@@ -1,7 +1,7 @@
 package org.sinhro.ForeignLanguageCourses;
 
 import org.sinhro.ForeignLanguageCourses.domain.Request;
-import org.sinhro.ForeignLanguageCourses.repository.IRequestRepository;
+import org.sinhro.ForeignLanguageCourses.repository.RequestRepository;
 import org.sinhro.ForeignLanguageCourses.service.NewRequestsGeneratorService;
 import org.sinhro.ForeignLanguageCourses.service.RequestsHandlerService;
 import org.sinhro.ForeignLanguageCourses.service.statistic.StatisticService;
@@ -21,7 +21,7 @@ public class MainProcess {
     private StatisticService statisticService;
 
     @Autowired
-    private IRequestRepository requestRepository;
+    private RequestRepository requestRepository;
 
     @Autowired
     private NewRequestsGeneratorService newRequestsGeneratorService;
@@ -40,12 +40,12 @@ public class MainProcess {
         newRequestsGeneratorService.generate();
 
         //Все имеющиеся на текущий момент заявки (новые +  необработанные с прошлого раза)
-        List<Request> requests = requestRepository.requests();
+        List<Request> requests = requestRepository.findAll();
 
         //Обработаем заявки
         List<Request> handledRequests = requestsHandlerService.handleRequests(requests);
         for (Request hReq : handledRequests) {
-            requestRepository.remove(hReq);
+            requestRepository.delete(hReq);
         }
 
         //Оплата следующих 2 недель обучения

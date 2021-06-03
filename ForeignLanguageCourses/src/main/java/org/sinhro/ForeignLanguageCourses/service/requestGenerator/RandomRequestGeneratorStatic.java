@@ -1,10 +1,11 @@
-package org.sinhro.ForeignLanguageCourses.service.request_generator;
+package org.sinhro.ForeignLanguageCourses.service.requestGenerator;
 
+import org.sinhro.ForeignLanguageCourses.domain.Intensity;
 import org.sinhro.ForeignLanguageCourses.domain.Request;
-import org.sinhro.ForeignLanguageCourses.repository.IIntensityRepository;
-import org.sinhro.ForeignLanguageCourses.repository.ILanguageRepository;
-import org.sinhro.ForeignLanguageCourses.repository.ILevelRepository;
-import org.sinhro.ForeignLanguageCourses.service.name_generator.INameGenerator;
+import org.sinhro.ForeignLanguageCourses.repository.IntensityRepository;
+import org.sinhro.ForeignLanguageCourses.repository.LanguageRepository;
+import org.sinhro.ForeignLanguageCourses.repository.LevelRepository;
+import org.sinhro.ForeignLanguageCourses.service.nameGenerator.INameGenerator;
 import org.sinhro.ForeignLanguageCourses.tools.random.IListElement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -19,13 +20,13 @@ import java.util.Random;
 public class RandomRequestGeneratorStatic implements IRequestGenerator {
 
     @Autowired
-    private IIntensityRepository intensityRepository;
+    private IntensityRepository intensityRepository;
 
     @Autowired
-    private ILanguageRepository languageRepository;
+    private LanguageRepository languageRepository;
 
     @Autowired
-    private ILevelRepository levelRepository;
+    private LevelRepository levelRepository;
 
     @Autowired
     private Random random;
@@ -53,12 +54,13 @@ public class RandomRequestGeneratorStatic implements IRequestGenerator {
     }
 
     private Request generateSingle(){
+
         return new Request(
             null,
             nameGenerator.generateSecondName(),
-            listElement.get(intensityRepository.intensities()),
-            listElement.get(languageRepository.languages()),
-            listElement.get(levelRepository.levels())
+            listElement.get(intensityRepository.findAll()),
+            listElement.get(languageRepository.findAll()),
+            listElement.get(levelRepository.findAll())
         );
     }
 }

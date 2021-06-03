@@ -1,4 +1,4 @@
-package org.sinhro.ForeignLanguageCourses.service.course_calculator;
+package org.sinhro.ForeignLanguageCourses.service.courseCalculator;
 
 import org.sinhro.ForeignLanguageCourses.domain.Intensity;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package org.sinhro.ForeignLanguageCourses.service.name_generator;
+package org.sinhro.ForeignLanguageCourses.service.nameGenerator;
 
 import org.springframework.stereotype.Component;
 
